@@ -1,0 +1,2310 @@
+{
+        "annotations": {
+          "list": [
+            {
+              "builtIn": 1,
+              "datasource": "-- Grafana --",
+              "enable": true,
+              "hide": true,
+              "iconColor": "rgba(0, 211, 255, 1)",
+              "name": "Annotations & Alerts",
+              "target": {
+                "limit": 100,
+                "matchAny": false,
+                "tags": [],
+                "type": "dashboard"
+              },
+              "type": "dashboard"
+            }
+          ]
+        },
+        "editable": true,
+        "fiscalYearStartMonth": 0,
+        "graphTooltip": 0,
+        "id": 59,
+        "iteration": 1673964147579,
+        "links": [],
+        "liveNow": false,
+        "panels": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "9llgIxzVz"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "#ffffff",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "noValue": "Magento Products",
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 2,
+              "w": 24,
+              "x": 0,
+              "y": 0
+            },
+            "id": 11,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "9llgIxzVz"
+                },
+                "refId": "A"
+              }
+            ],
+            "transparent": true,
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "continuous-GrYlRd"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 10,
+              "x": 0,
+              "y": 2
+            },
+            "id": 15,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_products_count_total{} ",
+                "interval": "",
+                "legendFormat": "Products",
+                "refId": "A"
+              }
+            ],
+            "title": "PRODUCTS",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "dark-red",
+                      "value": null
+                    },
+                    {
+                      "color": "dark-green",
+                      "value": 40
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 14,
+              "x": 10,
+              "y": 2
+            },
+            "id": 17,
+            "options": {
+              "displayMode": "basic",
+              "orientation": "horizontal",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "showUnfilled": true
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_catalog_category_count_total{store_code=\"default\",status=\"enabled\",menu_status=\"enabled\"}",
+                "interval": "",
+                "legendFormat": "Categories enable",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_catalog_category_count_total{store_code=\"default\",status=\"disabled\",menu_status=\"disabled\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "Categories disable",
+                "refId": "B"
+              }
+            ],
+            "title": "CATEGORIES PRODUCTS",
+            "type": "bargauge"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "9llgIxzVz"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "#ffffff",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "noValue": "Magento Sales",
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 2,
+              "w": 24,
+              "x": 0,
+              "y": 9
+            },
+            "id": 2,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "9llgIxzVz"
+                },
+                "refId": "A"
+              }
+            ],
+            "transparent": true,
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "#d798de",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 5,
+              "x": 0,
+              "y": 11
+            },
+            "id": 4,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_customer_count_total{store_code=\"default\"}",
+                "interval": "",
+                "legendFormat": "",
+                "refId": "A"
+              }
+            ],
+            "title": "COUNT COSTUMER",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "super-light-purple",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 11,
+              "x": 5,
+              "y": 11
+            },
+            "id": 8,
+            "options": {
+              "colorMode": "background",
+              "graphMode": "none",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_orders_count_total{state=\"new\",store_code=\"default\"}",
+                "interval": "",
+                "legendFormat": "Orders count New",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_orders_count_total{state=\"complete\",store_code=\"default\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "Orders count complete",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_orders_count_total{state=\"closed\",store_code=\"default\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "Orders count closed",
+                "refId": "C"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_orders_count_total{state=\"canceled\",store_code=\"default\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "Orders count canceled",
+                "refId": "D"
+              }
+            ],
+            "title": "ORDERS COUNT",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "super-light-purple",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 8,
+              "x": 16,
+              "y": 11
+            },
+            "id": 6,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_orders_amount_total{state=\"new\",store_code=\"default\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "New orders amount",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_orders_amount_total{state=\"complete\",store_code=\"default\"}",
+                "interval": "",
+                "legendFormat": "Complete orders amount ",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_orders_amount_total{state=\"closed\",store_code=\"default\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "Closed orders amount",
+                "refId": "C"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_orders_amount_total{state=\"canceled\",store_code=\"default\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "Canceled orders amount",
+                "refId": "D"
+              }
+            ],
+            "title": "ORDERS AMOUNT",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "semi-dark-purple",
+                      "value": null
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 24,
+              "x": 0,
+              "y": 18
+            },
+            "id": 13,
+            "options": {
+              "displayMode": "basic",
+              "orientation": "horizontal",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "showUnfilled": true
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_orders_items_count_total{status=\"Comprado\",store_code=\"default\"}",
+                "interval": "",
+                "legendFormat": "Itens comprados",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_orders_items_count_total{status=\"Faturado\",store_code=\"default\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "Itens faturados",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_orders_items_count_total{status=\"Enviado\",store_code=\"default\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "Itens enviados",
+                "refId": "C"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_orders_items_count_total{status=\"Cancelado\",store_code=\"default\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "Itens cancelados",
+                "refId": "D"
+              }
+            ],
+            "title": "ORDERS ITENS",
+            "type": "bargauge"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "9llgIxzVz"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "#ffffff",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "noValue": "Magento Indexer",
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 2,
+              "w": 24,
+              "x": 0,
+              "y": 25
+            },
+            "id": 19,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "9llgIxzVz"
+                },
+                "refId": "A"
+              }
+            ],
+            "transparent": true,
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "semi-dark-orange",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 0,
+              "y": 27
+            },
+            "id": 23,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"1\",title=\"Design Config Grid\",status=\"valid\"}",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"1\",title=\"Design Config Grid\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"1\",title=\"Design Config Grid\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LAST CALL SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "DESIGN CONFIG GRID",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "description": "",
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "semi-dark-blue",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 12,
+              "y": 27
+            },
+            "id": 25,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"1\",title=\"Customer Grid\",status=\"valid\"}",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"1\",title=\"Customer Grid\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"1\",title=\"Customer Grid\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LAST CALL SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "COSTUMER GRID",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "semi-dark-red",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 0,
+              "y": 30
+            },
+            "id": 27,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"1\",title=\"Category Products\",status=\"valid\"}",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"1\",title=\"Category Products\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"1\",title=\"Category Products\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LAST CALL SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "CATEGORY PRODUCTS",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "dark-purple",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 12,
+              "y": 30
+            },
+            "id": 29,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"1\",title=\"Product Categories\",status=\"valid\"}",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"1\",title=\"Product Categories\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"1\",title=\"Product Categories\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LAST CALL SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "PRODUCT CATEGORIES",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "semi-dark-blue",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 0,
+              "y": 33
+            },
+            "id": 31,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"1\",title=\"Catalog Rule Product\",status=\"valid\"}",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"1\",title=\"Catalog Rule Product\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"1\",title=\"Catalog Rule Product\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LAST CALL SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "CATALOG RULE PRODUCT",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "dark-yellow",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 12,
+              "y": 33
+            },
+            "id": 33,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"1\",title=\"Product EAV\",status=\"valid\"} ",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"1\",title=\"Product EAV\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"1\",title=\"Product EAV\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LAST CALL SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "PRODUCT EAV",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "dark-green",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 0,
+              "y": 36
+            },
+            "id": 35,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"1\",title=\"Product Price\",status=\"valid\"}",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"1\",title=\"Product Price\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"1\",title=\"Product Price\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LAST CALL SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "PRODUCT PRICE",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "dark-orange",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 12,
+              "y": 36
+            },
+            "id": 37,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"1\",title=\"Catalog Product Rule\",status=\"valid\"}",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"1\",title=\"Catalog Product Rule\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"1\",title=\"Catalog Product Rule\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LAST CALL SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "CATALOG PRODUCT RULE",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "#a56c9f",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 0,
+              "y": 39
+            },
+            "id": 39,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"1\",title=\"Stock\",status=\"valid\"}",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"1\",title=\"Stock\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"1\",title=\"Stock\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LAST CALL SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "STOCK",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "#ffffff",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 12,
+              "y": 39
+            },
+            "id": 41,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"1\",title=\"Product/Target Rule\",status=\"valid\"}",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"1\",title=\"Product/Target Rule\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"1\",title=\"Product/Target Rule\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LAST CALL SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "PRODUCT/TARGET RULE",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "semi-dark-blue",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 0,
+              "y": 42
+            },
+            "id": 43,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"1\",title=\"Target Rule/Product\",status=\"valid\"}",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"1\",title=\"Target Rule/Product\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"1\",title=\"Target Rule/Product\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LAST CALL SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "TARGET RULE/PRODUCT",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "dark-yellow",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 12,
+              "y": 42
+            },
+            "id": 45,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"\",title=\"Catalog Search\",status=\"working\"}",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"\",title=\"Catalog Search\",status=\"working\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"\",title=\"Catalog Search\",status=\"working\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LAST CALL SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "CATALOG SEARCH",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "light-red",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 0,
+              "y": 45
+            },
+            "id": 47,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"1\",title=\"Sales Rule\",status=\"valid\"}",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"1\",title=\"Sales Rule\",status=\"valid\"} ",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"1\",title=\"Sales Rule\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LAST CALL SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "SALES RULES",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "semi-dark-green",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 12,
+              "y": 45
+            },
+            "id": 49,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"1\",title=\"Unirgy Vendor-Product Associations Indexer\",status=\"valid\"}",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"1\",title=\"Unirgy Vendor-Product Associations Indexer\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"1\",title=\"Unirgy Vendor-Product Associations Indexer\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LAST CALL SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "UNIRGY VENDOR - PRODUCT ASSOCIATIONS INDEXER",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "#70de69",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 0,
+              "y": 48
+            },
+            "id": 51,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"1\",title=\"Unirgy Product-Vendor Associations Indexer\",status=\"valid\"}",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"1\",title=\"Unirgy Product-Vendor Associations Indexer\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"1\",title=\"Unirgy Product-Vendor Associations Indexer\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LAST CAÇÇ SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "UNIRGY PRODUCT - VENDOR ASSOCIATIONS INDEXER",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "semi-dark-blue",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 12,
+              "y": 48
+            },
+            "id": 53,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"1\",title=\"Unirgy Vendor Ship-To Location Limit Vendor Indexer\",status=\"valid\"} ",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"1\",title=\"Unirgy Vendor Ship-To Location Limit Vendor Indexer\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"1\",title=\"Unirgy Vendor Ship-To Location Limit Vendor Indexer\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LAST CALL SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "UNIRGY VENDOR SHIP - TO LOCATION LIMIT VENDOR INDEXER INDEXER",
+            "type": "stat"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${datasource}"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "fixedColor": "#cc0d8c",
+                  "mode": "fixed"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "short"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 3,
+              "w": 12,
+              "x": 0,
+              "y": 51
+            },
+            "id": 55,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_backlog_count_total{isValid=\"1\",title=\"Unirgy Vendor Ship-To Location Limit Product Indexer\",status=\"valid\"}",
+                "interval": "",
+                "legendFormat": "BACKLOG",
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_changelog_count_total{isValid=\"1\",title=\"Unirgy Vendor Ship-To Location Limit Product Indexer\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "CHANGELOG",
+                "refId": "B"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "${datasource}"
+                },
+                "exemplar": true,
+                "expr": "magento_indexer_last_call_seconds_count{isValid=\"1\",title=\"Unirgy Vendor Ship-To Location Limit Product Indexer\",status=\"valid\"}",
+                "hide": false,
+                "interval": "",
+                "legendFormat": "LASCT CALL SECONDS",
+                "refId": "C"
+              }
+            ],
+            "title": "UNIRGY VENDOR SHIP - TO LOCATION LIMIT PRODUCT INDEXER",
+            "type": "stat"
+          }
+        ],
+        "schemaVersion": 34,
+        "style": "dark",
+        "tags": [],
+        "templating": {
+          "list": [
+            {
+              "current": {
+                "selected": false,
+                "text": "Prometheus DEV",
+                "value": "Prometheus DEV"
+              },
+              "hide": 0,
+              "includeAll": false,
+              "label": "datasource",
+              "multi": false,
+              "name": "datasource",
+              "options": [],
+              "query": "prometheus",
+              "queryValue": "",
+              "refresh": 1,
+              "regex": "",
+              "skipUrlSync": false,
+              "type": "datasource"
+            }
+          ]
+        },
+        "time": {
+          "from": "now-6h",
+          "to": "now"
+        },
+        "timepicker": {},
+        "timezone": "",
+        "title": "Magento COUNT",
+        "uid": "dsP6c87Vz",
+        "version": 24,
+        "weekStart": ""
+      }
